@@ -3853,7 +3853,7 @@ char const * tinyfd_inputBox(
 		if ( zenityPresent() )
 		{
 			if (aTitle&&!strcmp(aTitle,"tinyfd_query")){strcpy(tinyfd_response,"zenity");return (char const *)1;}
-      strcpy ( lDialogString ,  "szAnswer=$(zenity --entry" ) ;
+      strcpy ( lDialogString ,  "szAnswer=$(zenity --entry --attach=$(xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2)" ) ;
 		}
 		else
 		{
